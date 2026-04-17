@@ -8,17 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del codigo
-        uses: actions/checkout@v4
-      - name: Instalar Theos y SDK
-        uses: target/setup-theos@v1
-      - name: Compilando Panel VIP 💎
-        run: |
-          make package FINALPACKAGE=1
+      - uses: actions/checkout@v4
+      - uses: target/setup-theos@v1
+      - name: Build
+        run: make package FINALPACKAGE=1
         env:
-          THEOS: ${{ github.workspace }}/theos
-      - name: Generar Archivo Final
-        uses: actions/upload-artifact@v4
+          THEOS:  ${{github.workspace}}/theos
+      - uses: actions/upload-artifact@v4
         with:
           name: Andres-VIP-DEB
           path: packages/*.deb
