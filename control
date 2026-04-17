@@ -1,0 +1,9 @@
+Package: com.andres.panelvip
+Name: Andres Panel VIP 💎
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Panel VIP exclusivo para Free Fire.
+Maintainer: Andres
+Author: Andres
+Section: Tweaks
